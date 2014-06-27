@@ -10,6 +10,7 @@ Repository to hold my tmux/vim/bash configuration files.
     ~/.fanseashell/init.sh
 
 ## Install Notes
+When the init.sh is executed the following symlinks are created:
 *  ~/.fanseashell/vimrc to ~/.vimrc
 *  ~/.fanseashell/tmux.conf to ~/.tmux.conf
 *  ~/.fanseashell/vim to ~/.vim.
