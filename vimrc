@@ -57,22 +57,46 @@ map <Leader>uf :Unite file<CR>
 "open unite for buffers
 map <Leader>ub :Unite buffer<CR>
 "toggle nerd tree file browser
-map <Leader>tn :NERDTreeToggle<CR>
+map <Leader>nt :NERDTreeToggle<CR>
 "toggle deploy current apex file
 map <Leader>tt :TagbarToggle<CR>
 
 "deploy current file to salesforce
 map <Leader>ado :ApexDeployOne<CR>y<CR>
 
-"size of a hard tabstop
-set tabstop=4
+"setup tabs in apex class files
+autocmd BufNewFile,BufRead *.cls set sw=4 sts=4 ts=4 et
 
-"size of an "indent"
-set shiftwidth=4
+"auto remove trailing whitespace in apex class files
+autocmd BufWritePre *.cls :%s/\s\+$//e
 
-"a combination of spaces and tabs are used to simulate tab stops at a width
-"other than the (hard)tabstop
-set softtabstop=4
-
-"map <Leader>rf
+"reformat entire file
 map <Leader>rf mzgg=G`z<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MULTIPURPOSE TAB KEY
+" Indent if we're at the beginning of a line. Else, do completion.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\K'
+        return "\<TAB>"
+    else
+        return "\<C-P>"
+    endif
+endfunction
+inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
+inoremap <S-TAB> <C-N>
+
+"Automatically enter paste mode when pasting into VI in insert mode and exit
+"paste mode after paste is fiished
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
