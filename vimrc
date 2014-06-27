@@ -64,6 +64,9 @@ map <Leader>tt :TagbarToggle<CR>
 "deploy current file to salesforce
 map <Leader>ado :ApexDeployOne<CR>y<CR>
 
+"test current file to salesforce
+map <Leader>at :ApexTest<CR><CR>
+
 "setup tabs in apex class files
 autocmd BufNewFile,BufRead *.cls set sw=4 sts=4 ts=4 et
 
