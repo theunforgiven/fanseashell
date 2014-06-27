@@ -61,15 +61,14 @@ map <Leader>nt :NERDTreeToggle<CR>
 "toggle deploy current apex file
 map <Leader>tt :TagbarToggle<CR>
 
-"deploy current file to salesforce
-map <Leader>ado :ApexDeployOne<CR>y<CR>
-
-"test current file to salesforce
-map <Leader>at :ApexTest<CR><CR>
-
 "setup tabs in apex class files
-autocmd BufNewFile,BufRead *.cls set sw=4 sts=4 ts=4 et
-
+autocmd FileType apexcode set ts=4 sw=4 sts=4 et
+"test current file to salesforce
+autocmd FileType apexcode nnoremap <leader>at :ApexTest<CR><CR>
+"deploy current file to salesforce
+autocmd FileType apexcode nnoremap <leader>ado :ApexDeployOne<CR>y<CR>
+"format apex class files with astyle
+autocmd BufNewFile,BufRead *.cls nmap <buffer> <F7> mz:%!astyle --mode=java --style=java --break-blocks --pad-oper --pad-header --add-brackets --max-code-length=120 --break-after-logical<CR>`z
 "auto remove trailing whitespace in apex class files
 autocmd BufWritePre *.cls :%s/\s\+$//e
 
