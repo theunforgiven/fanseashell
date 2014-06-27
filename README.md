@@ -14,3 +14,7 @@ When the init.sh script is executed the following symlinks are created:
 *  ~/.fanseashell/vimrc to ~/.vimrc
 *  ~/.fanseashell/tmux.conf to ~/.tmux.conf
 *  ~/.fanseashell/vim to ~/.vim.
+
+# Screenshots
+![Bash And Tmux](https://github.com/theunforgiven/fanseashell/raw/master/screenshots/bashAndTmux.png)
+![Vim And Tmux](https://github.com/theunforgiven/fanseashell/raw/master/screenshots/vimAndTmux.png)
