@@ -124,3 +124,6 @@ function! XTermPasteBegin()
   set paste
   return ""
 endfunction
+
+"make vim goto last position in file when a file is reopened
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
