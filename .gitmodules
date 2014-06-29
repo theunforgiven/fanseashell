@@ -13,6 +13,7 @@
 [submodule "vim/bundle/vim-force.com"]
 	path = vim/bundle/vim-force.com
 	url = git://github.com/neowit/vim-force.com.git
+	ignore = untracked
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
 	url = git://github.com/bling/vim-airline
@@ -31,3 +32,9 @@
 [submodule "vim/bundle/vim-jellybeans"]
 	path = vim/bundle/vim-jellybeans
 	url = git@github.com:nanotech/jellybeans.vim.git
+[submodule "vim/bundle/vim-easymotion"]
+	path = vim/bundle/vim-easymotion
+	url = git@github.com:Lokaltog/vim-easymotion.git
+[submodule "vim/bundle/vim-repeat"]
+	path = vim/bundle/vim-repeat
+	url = git@github.com:tpope/vim-repeat.git

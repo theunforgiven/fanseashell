@@ -12,7 +12,7 @@ execute pathogen#infect()
 
 "make sure vim loads apexcode filetype detection
 runtime! bundle/vim-force.com/ftdetect/vim-force.com.vim
-"settings for force.com plugin 
+"settings for force.com plugin
 "paths must be absolute for plugin to work properly
 let g:apex_backup_folder="/home/sfdcdev/apex/backup"
 let g:apex_temp_folder="/home/sfdcdev/apex/temp"
@@ -49,7 +49,7 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tmuxline#enabled = 0
 let g:tmuxline_theme = 'jellybeans'
 let g:promptline_theme = 'jelly'
-let g:promptline_powerline_symbols = 1 
+let g:promptline_powerline_symbols = 1
 colorscheme jellybeans
 
 "open unite for files in working dir
@@ -127,3 +127,14 @@ endfunction
 
 "make vim goto last position in file when a file is reopened
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" Disable default mappings
+let g:EasyMotion_do_mapping = 0
+
+" type `l` and match `l`&`L`
+let g:EasyMotion_smartcase = 1
+
+" Smartsign (type `3` and match `3`&`#`)
+let g:EasyMotion_use_smartsign_us = 1
+
+map s <Plug>(easymotion-s2)
