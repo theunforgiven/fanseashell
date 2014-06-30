@@ -52,6 +52,10 @@ let g:promptline_theme = 'jelly'
 let g:promptline_powerline_symbols = 1
 colorscheme jellybeans
 
+"If we are in an apexcode file ignore all xml files when listing files in
+"unite
+autocmd FileType apexcode call unite#custom#source('file', 'ignore_pattern', '\.xml$')
+
 "open unite for files in working dir
 map <Leader>uf :Unite file<CR>
 "open unite for buffers
