@@ -65,8 +65,6 @@ nnoremap <Leader><Leader> <C-^>
 
 "setup tabs in apex class files
 autocmd FileType apexcode set ts=4 sw=4 sts=4 et
-"test current file to salesforce
-autocmd FileType apexcode nnoremap <leader>at :ApexTest<CR><CR>
 "deploy current file to salesforce
 autocmd FileType apexcode nnoremap <leader>ado :ApexDeployOne<CR>y<CR>
 "format apex class files with astyle
