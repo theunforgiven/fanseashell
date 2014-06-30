@@ -88,8 +88,52 @@ function! ApexAlternateForCurrentFile()
   endif
   return new_file
 endfunction
-"Open test file for apex code file
-autocmd FileType apexcode nnoremap <leader>. :call ApexOpenTestAlternate()<cr>
+function! ApexClassNameFromFile(filename)
+  let class_name = a:filename
+  let class_name = substitute(class_name, '.cls$', '', '')
+  let class_name = substitute(class_name, '^.*\/', '', '')
+  return class_name
+endfunction
+"open test for apex code file
+autocmd FileType apexcode nnoremap <Leader>. :call ApexOpenTestAlternate()<CR>
+
+function! ApexMapCR()
+  nnoremap <Leader>t :call ApexRunTestFile()<CR>
+endfunction
+
+autocmd FileType apexcode call ApexMapCR()
+autocmd FileType apexcode nnoremap <Leader>at :ApexTest<CR><CR>
+
+function! ApexRunTestFile(...)
+    if a:0
+        let command_suffix = a:1
+    else
+        let command_suffix = ""
+    endif
+
+    " Run the tests for the previously-marked file.
+    let in_test_file = match(expand("%"), 'Test.cls$') != -1
+    if in_test_file
+        call ApexSetTestFile()
+    elseif !exists("t:apex_test_file")
+        return
+    end
+    call ApexRunTests(t:apex_test_file . command_suffix)
+endfunction
+
+function! ApexSetTestFile()
+    " Set the spec file that tests will be run for.
+    let t:apex_test_file=@%
+endfunction
+
+function! ApexRunTests(filename)
+    " Write the file and run tests for the given filename
+    if expand("%") != ""
+      :w
+    end
+    let class_name = ApexClassNameFromFile(a:filename)
+    exec ":ApexTest testAndDeploy " . class_name
+endfunction
 
 "auto remove trailing whitespace in apex class files
 autocmd BufWritePre *.cls :%s/\s\+$//e
@@ -142,3 +186,10 @@ map s <Plug>(easymotion-s2)
 set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<
 "toggle showing whitespace
 map <F11> :set list!<CR>
+
+" Unbind the cursor keys in insert, normal and visual modes.
+for prefix in ['i', 'n', 'v']
+  for key in ['<Up>', '<Down>', '<Left>', '<Right>']
+    exe prefix . "noremap " . key . " <Nop>"
+  endfor
+endfor
