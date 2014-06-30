@@ -102,7 +102,6 @@ function! ApexMapCR()
 endfunction
 
 autocmd FileType apexcode call ApexMapCR()
-autocmd FileType apexcode nnoremap <Leader>at :ApexTest<CR><CR>
 
 function! ApexRunTestFile(...)
     if a:0
