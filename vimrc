@@ -57,9 +57,9 @@ colorscheme jellybeans
 autocmd FileType apexcode call unite#custom#source('file', 'ignore_pattern', '\.xml$')
 
 "open unite for files in working dir
-map <Leader>uf :Unite file<CR>
+map <Leader>uf :Unite -start-insert file<CR>
 "open unite for buffers
-map <Leader>ub :Unite buffer<CR>
+map <Leader>ub :Unite -start-insert buffer<CR>
 "toggle nerd tree file browser
 map <Leader>nt :NERDTreeToggle<CR>
 "toggle deploy current apex file
@@ -194,3 +194,8 @@ for prefix in ['i', 'n', 'v']
     exe prefix . "noremap " . key . " <Nop>"
   endfor
 endfor
+
+if v:version >= 700
+  autocmd BufLeave * let b:winview = winsaveview()
+  autocmd BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
+endif
