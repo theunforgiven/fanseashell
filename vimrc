@@ -55,9 +55,10 @@ colorscheme jellybeans
 "If we are in an apexcode file ignore all xml files when listing files in
 "unite
 autocmd FileType apexcode call unite#custom#source('file', 'ignore_pattern', '\.xml$')
+autocmd FileType apexcode call unite#custom#source('file_rec', 'ignore_pattern', '\.xml$')
 
 "open unite for files in working dir
-map <Leader>uf :Unite -start-insert file<CR>
+map <Leader>uf :Unite -start-insert file_rec<CR>
 "open unite for buffers
 map <Leader>ub :Unite -start-insert buffer<CR>
 "toggle nerd tree file browser
