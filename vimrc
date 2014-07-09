@@ -101,6 +101,7 @@ endfunction
 autocmd FileType apexcode nnoremap <Leader>. :call ApexOpenTestAlternate()<CR>
 "deploy current file
 autocmd FileType apexcode nnoremap <Leader>ado :ApexDeployOne<CR>Y<CR>
+autocmd FileType visualforce nnoremap <Leader>ado :ApexDeployOne<CR>Y<CR>
 
 function! ApexMapCR()
   nnoremap <Leader>t :call ApexRunTestFile()<CR>
