@@ -4,6 +4,11 @@ if { [ "$TERM" = "screen-256color" ] && [ -n "$TMUX" ]; } then
 	source ~/.fanseashell/fancy/promptline.sh
 fi
 
+EDITOR=vim
+export EDITOR
+
+set -o vi
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'

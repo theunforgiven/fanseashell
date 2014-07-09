@@ -99,6 +99,8 @@ function! ApexClassNameFromFile(filename)
 endfunction
 "open test for apex code file
 autocmd FileType apexcode nnoremap <Leader>. :call ApexOpenTestAlternate()<CR>
+"deploy current file
+autocmd FileType apexcode nnoremap <Leader>ado :ApexDeployOne<CR>Y<CR>
 
 function! ApexMapCR()
   nnoremap <Leader>t :call ApexRunTestFile()<CR>
@@ -114,7 +116,7 @@ function! ApexRunTestFile(...)
     endif
 
     " Run the tests for the previously-marked file.
-    let in_test_file = match(expand("%"), 'Test.cls$') != -1
+    let in_test_file = match(expand("%"), 'Tests\?.cls$') != -1
     if in_test_file
         call ApexSetTestFile()
     elseif !exists("t:apex_test_file")
