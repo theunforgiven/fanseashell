@@ -1,0 +1,15 @@
+[user]
+	email = theunforgiven@gmail.com
+	name = Nicholas Goodwin
+
+[push]
+	default = simple
+
+[alias]
+	st = status
+	stt = status --untracked-files=no
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	lg = log -p
