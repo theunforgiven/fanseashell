@@ -19,6 +19,8 @@ let g:apex_temp_folder="/home/sfdcdev/apex/temp"
 let g:apex_properties_folder="/home/sfdcdev/apex/properties"
 let g:apex_tooling_force_dot_com_path="/home/sfdcdev/apex/tooling-jar/tooling-force.com-0.1.4.2-getCompilerErrors-fix.jar"
 
+set smartcase
+
 "always show status line
 set laststatus=2
 
@@ -105,6 +107,7 @@ autocmd FileType visualforce nnoremap <Leader>ado :ApexDeployOne<CR>Y<CR>
 
 function! ApexMapCR()
   nnoremap <Leader>t :call ApexRunTestFile()<CR>
+  nnoremap <Leader>tr :call ApexRunTestFile()<CR><CR>
 endfunction
 
 autocmd FileType apexcode call ApexMapCR()
@@ -185,6 +188,9 @@ let g:EasyMotion_smartcase = 1
 
 " Smartsign (type `3` and match `3`&`#`)
 let g:EasyMotion_use_smartsign_us = 1
+
+" allow the . to execute once for each line of a visual selection
+vnoremap . :normal .<CR>
 
 map s <Plug>(easymotion-s2)
 
