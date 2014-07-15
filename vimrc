@@ -74,6 +74,7 @@ nnoremap <Leader><Leader> <C-^>
 autocmd FileType apexcode set ts=4 sw=4 sts=4 et
 "deploy current file to salesforce
 autocmd FileType apexcode nnoremap <leader>ado :ApexDeployOne<CR>y<CR>
+autocmd FileType apexcode nnoremap <leader>al :ApexLog<CR>
 "format apex class files with astyle
 autocmd BufNewFile,BufRead *.cls nmap <buffer> <F7> mz:%!astyle --mode=java --style=java --break-blocks --pad-oper --pad-header --add-brackets --max-code-length=120 --break-after-logical<CR>`z
 
