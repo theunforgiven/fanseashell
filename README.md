@@ -13,7 +13,11 @@ Repository to hold my tmux/vim/bash configuration files.
 When the init.sh script is executed the following symlinks are created:
 *  ~/.fanseashell/vimrc to ~/.vimrc
 *  ~/.fanseashell/tmux.conf to ~/.tmux.conf
+*  ~/.fanseashell/gitconfig to ~/.gitconfig
 *  ~/.fanseashell/vim to ~/.vim.
+
+## Windows Notes
+* You will need to set the terminal type string in Connection->Data to 'xterm-256color' otherwise tmux has issues
 
 # Screenshots
 ![Bash And Tmux](https://github.com/theunforgiven/fanseashell/raw/master/screenshots/bashAndTmux.png)
