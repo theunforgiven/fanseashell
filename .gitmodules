@@ -38,6 +38,9 @@
 [submodule "vim/bundle/vim-repeat"]
 	path = vim/bundle/vim-repeat
 	url = git@github.com:tpope/vim-repeat.git
-[submodule "vim/bundle/ack.vim"]
-	path = vim/bundle/ack.vim
+[submodule "vim/bundle/vim-ack"]
+	path = vim/bundle/vim-ack
 	url = git@github.com:mileszs/ack.vim.git
+[submodule "vim/bundle/vim-delimitmate"]
+	path = vim/bundle/vim-delimitmate
+	url = git@github.com:Raimondi/delimitMate.git

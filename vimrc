@@ -210,3 +210,5 @@ if v:version >= 700
   autocmd BufLeave * let b:winview = winsaveview()
   autocmd BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 endif
+let delimitMate_jump_expansion = 1
+let delimitMate_expand_cr = 1
