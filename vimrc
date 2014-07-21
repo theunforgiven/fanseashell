@@ -41,6 +41,9 @@ set history=5000
 "do not show mode below status line - airline does that
 set noshowmode
 
+"highlight current line
+set cursorline
+
 "Display buffer names for current tab at in the tab line of the screen when there is a
 "single tab
 let g:airline#extensions#tabline#enabled = 1
