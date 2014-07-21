@@ -62,6 +62,11 @@ colorscheme jellybeans
 autocmd FileType apexcode call unite#custom#source('file_rec/async', 'ignore_pattern', '\.xml$')
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
+"enable logging of yanks for unite
+let g:unite_source_history_yank_enable = 1
+
+"open unite for yank history
+map <leader>uy :<C-u>Unite history/yank<CR>
 "open unite for files in working dir
 map <Leader>uf :Unite -start-insert file_rec/async<CR>
 "open unite for buffers
