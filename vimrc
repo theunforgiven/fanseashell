@@ -61,6 +61,7 @@ colorscheme jellybeans
 "unite
 autocmd FileType apexcode call unite#custom#source('file_rec/async', 'ignore_pattern', '\.xml$')
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
 
 "enable logging of yanks for unite
 let g:unite_source_history_yank_enable = 1
