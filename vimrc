@@ -19,6 +19,9 @@ let g:apex_temp_folder="/home/sfdcdev/apex/temp"
 let g:apex_properties_folder="/home/sfdcdev/apex/properties"
 let g:apex_tooling_force_dot_com_path="/home/sfdcdev/apex/tooling-jar/tooling-force.com-0.1.4.2-getCompilerErrors-fix.jar"
 
+"enable spellcheck
+set spell spelllang=en_us
+
 set smartcase
 
 "always show status line
