@@ -57,6 +57,9 @@ let g:promptline_theme = 'jelly'
 let g:promptline_powerline_symbols = 1
 colorscheme jellybeans
 
+"force md files to be detected as markdown not modula2
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
 "If we are in an apexcode file ignore all xml files when listing files in
 "unite
 autocmd FileType apexcode call unite#custom#source('file_rec/async', 'ignore_pattern', '\.xml$')
@@ -154,7 +157,7 @@ function! ApexRunTests(filename)
 endfunction
 
 "auto remove trailing whitespace in apex class files
-autocmd BufWritePre *.cls :%s/\s\+$//e
+"autocmd BufWritePre *.cls :%s/\s\+$//e
 
 "reformat entire file
 map <Leader>rf mzgg=G`z<CR>
