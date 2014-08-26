@@ -62,6 +62,9 @@ colorscheme jellybeans
 
 "force md files to be detected as markdown not modula2
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost *.md setlocal formatoptions=ant
+autocmd BufNewFile,BufReadPost *.md setlocal textwidth=80
+autocmd BufNewFile,BufReadPost *.md setlocal wrapmargin=0
 
 "If we are in an apexcode file ignore all xml files when listing files in
 "unite
