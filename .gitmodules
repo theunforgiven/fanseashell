@@ -10,10 +10,6 @@
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "vim/bundle/vim-force.com"]
-	path = vim/bundle/vim-force.com
-	url = git://github.com/neowit/vim-force.com.git
-	ignore = untracked
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
 	url = git://github.com/bling/vim-airline
@@ -47,3 +43,6 @@
 [submodule "vim/bundle/vim-proc"]
 	path = vim/bundle/vim-proc
 	url = git@github.com:Shougo/vimproc.vim.git
+[submodule "vim/bundle/vim-markdown"]
+	path = vim/bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git

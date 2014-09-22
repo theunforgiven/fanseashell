@@ -10,15 +10,6 @@ filetype plugin indent on
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
-"make sure vim loads apexcode filetype detection
-runtime! bundle/vim-force.com/ftdetect/vim-force.com.vim
-"settings for force.com plugin
-"paths must be absolute for plugin to work properly
-let g:apex_backup_folder="/home/sfdcdev/apex/backup"
-let g:apex_temp_folder="/home/sfdcdev/apex/temp"
-let g:apex_properties_folder="/home/sfdcdev/apex/properties"
-let g:apex_tooling_force_dot_com_path="/home/sfdcdev/apex/tooling-jar/tooling-force.com-0.1.4.2-getCompilerErrors-fix.jar"
-
 "enable spellcheck
 set spell spelllang=en_us
 
@@ -60,15 +51,9 @@ let g:promptline_theme = 'jelly'
 let g:promptline_powerline_symbols = 1
 colorscheme jellybeans
 
-"force md files to be detected as markdown not modula2
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-autocmd BufNewFile,BufReadPost *.md setlocal formatoptions=ant
-autocmd BufNewFile,BufReadPost *.md setlocal textwidth=80
-autocmd BufNewFile,BufReadPost *.md setlocal wrapmargin=0
+"disable markdown plugin auto folding
+let g:vim_markdown_folding_disabled=1
 
-"If we are in an apexcode file ignore all xml files when listing files in
-"unite
-autocmd FileType apexcode call unite#custom#source('file_rec/async', 'ignore_pattern', '\.xml$')
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 
@@ -83,87 +68,10 @@ map <Leader>uf :Unite -start-insert file_rec/async<CR>
 map <Leader>ub :Unite -quick-match buffer<CR>
 "toggle nerd tree file browser
 map <Leader>nt :NERDTreeToggle<CR>
-"toggle deploy current apex file
+"toggle deploy current file
 map <Leader>tt :TagbarToggle<CR>
 "jump to previous buffer
 nnoremap <Leader><Leader> <C-^>
-
-"setup tabs in apex class files
-autocmd FileType apexcode set ts=4 sw=4 sts=4 et
-"deploy current file to salesforce
-autocmd FileType apexcode nnoremap <leader>ado :ApexDeployOne<CR>y<CR>
-autocmd FileType apexcode nnoremap <leader>al :ApexLog<CR>
-"format apex class files with astyle
-autocmd BufNewFile,BufRead *.cls nmap <buffer> <F7> mz:%!astyle --mode=java --style=java --break-blocks --pad-oper --pad-header --add-brackets --max-code-length=120 --break-after-logical<CR>`z
-
-function! ApexOpenTestAlternate()
-  let new_file = ApexAlternateForCurrentFile()
-  exec ':e ' . new_file
-endfunction
-function! ApexAlternateForCurrentFile()
-  let current_file = expand("%")
-  let new_file = current_file
-  let in_test = match(current_file, 'Test.cls$') != -1
-  let going_to_test = !in_test
-  if going_to_test
-    let new_file = substitute(new_file, '.cls$', 'Test.cls', '')
-  else
-    let new_file = substitute(new_file, 'Test.cls$', '.cls', '')
-  endif
-  return new_file
-endfunction
-function! ApexClassNameFromFile(filename)
-  let class_name = a:filename
-  let class_name = substitute(class_name, '.cls$', '', '')
-  let class_name = substitute(class_name, '^.*\/', '', '')
-  return class_name
-endfunction
-"open test for apex code file
-autocmd FileType apexcode nnoremap <Leader>. :call ApexOpenTestAlternate()<CR>
-"deploy current file
-autocmd FileType apexcode nnoremap <Leader>ado :ApexDeployOne<CR>Y<CR>
-autocmd FileType visualforce nnoremap <Leader>ado :ApexDeployOne<CR>Y<CR>
-
-function! ApexMapCR()
-  nnoremap <Leader>t :call ApexRunTestFile()<CR>
-  nnoremap <Leader>tr :call ApexRunTestFile()<CR><CR>
-endfunction
-
-autocmd FileType apexcode call ApexMapCR()
-
-function! ApexRunTestFile(...)
-    if a:0
-        let command_suffix = a:1
-    else
-        let command_suffix = ""
-    endif
-
-    " Run the tests for the previously-marked file.
-    let in_test_file = match(expand("%"), 'Tests\?.cls$') != -1
-    if in_test_file
-        call ApexSetTestFile()
-    elseif !exists("t:apex_test_file")
-        return
-    end
-    call ApexRunTests(t:apex_test_file . command_suffix)
-endfunction
-
-function! ApexSetTestFile()
-    " Set the spec file that tests will be run for.
-    let t:apex_test_file=@%
-endfunction
-
-function! ApexRunTests(filename)
-    " Write the file and run tests for the given filename
-    if expand("%") != ""
-      :w
-    end
-    let class_name = ApexClassNameFromFile(a:filename)
-    exec ":ApexTest testAndDeploy " . class_name
-endfunction
-
-"auto remove trailing whitespace in apex class files
-"autocmd BufWritePre *.cls :%s/\s\+$//e
 
 "reformat entire file
 map <Leader>rf mzgg=G`z<CR>
