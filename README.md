@@ -7,6 +7,9 @@ Repository to hold my tmux/vim/bash configuration files.
 # Installation
     git clone git@github.com:theunforgiven/fanseashell.git ~/.fanseashell
     echo source ~/.fanseashell/bash_custom >> ~/.bashrc
+    cd ~/.fanseashell
+    git submodule update --init --recursive
+    cd
     ~/.fanseashell/init.sh
 
 ## Install Notes
