@@ -45,11 +45,16 @@ let g:airline#extensions#tabline#enabled = 1
 "when showing buffers in table line add buffer number to them
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
-let g:airline#extensions#tmuxline#enabled = 0
 let g:tmuxline_theme = 'jellybeans'
 let g:promptline_theme = 'jelly'
 let g:promptline_powerline_symbols = 1
 colorscheme jellybeans
+
+"This will cause tmux and prompt theme files to be generated
+"i perfer the current blend of themes so these are commented out
+"let g:airline#extensions#tmuxline#enabled = 1 
+"let airline#extensions#tmuxline#snapshot_file = "~/.fanseashell/fancy/tmuxline.tmux.conf"
+"let airline#extensions#promptline#snapshot_file = "~/.fanseashell/fancy/promptline.sh"
 
 "disable markdown plugin auto folding
 let g:vim_markdown_folding_disabled=1
