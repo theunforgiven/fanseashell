@@ -52,7 +52,7 @@ colorscheme jellybeans
 
 "This will cause tmux and prompt theme files to be generated
 "i perfer the current blend of themes so these are commented out
-"let g:airline#extensions#tmuxline#enabled = 1 
+let g:airline#extensions#tmuxline#enabled = 0 
 "let airline#extensions#tmuxline#snapshot_file = "~/.fanseashell/fancy/tmuxline.tmux.conf"
 "let airline#extensions#promptline#snapshot_file = "~/.fanseashell/fancy/promptline.sh"
 
