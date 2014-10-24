@@ -37,9 +37,6 @@
 [submodule "vim/bundle/vim-ack"]
 	path = vim/bundle/vim-ack
 	url = git@github.com:mileszs/ack.vim.git
-[submodule "vim/bundle/vim-delimitmate"]
-	path = vim/bundle/vim-delimitmate
-	url = git@github.com:Raimondi/delimitMate.git
 [submodule "vim/bundle/vim-proc"]
 	path = vim/bundle/vim-proc
 	url = git@github.com:Shougo/vimproc.vim.git
