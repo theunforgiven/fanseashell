@@ -10,6 +10,16 @@ filetype plugin indent on
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
+"make sure vim loads apexcode filetype detection
+runtime! bundle/vim-force.com/ftdetect/vim-force.com.vim_markdown_folding_disabled
+"settings for force.com plugin
+"paths must be absolute for plugin to work properly
+let g:apex_backup_folder="/Users/nick/dev/apex/backup"		
+let g:apex_temp_folder="/Users/nick/dev/apex/temp"		
+let g:apex_properties_folder="/Users/nick/dev/apex/properties"		
+let g:apex_tooling_force_dot_com_path="/Users/nick/dev/apex/tooling-jar/tooling-force.com-0.3.1.3.jar"
+let g:apex_workspace_path="/Users/nick/dev"
+
 "enable spellcheck
 set spell spelllang=en_us
 
