@@ -11,7 +11,7 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
 "make sure vim loads apexcode filetype detection
-runtime! bundle/vim-force.com/ftdetect/vim-force.com.vim_markdown_folding_disabled
+runtime! bundle/vim-force.com/ftdetect/vim-force.com.vim
 "settings for force.com plugin
 "paths must be absolute for plugin to work properly
 let g:apex_backup_folder="/Users/nick/dev/apex/backup"		
