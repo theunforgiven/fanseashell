@@ -46,3 +46,6 @@
 [submodule "vim/bundle/vim-force.com"]
 	path = vim/bundle/vim-force.com
 	url = git@github.com:neowit/vim-force.com.git
+[submodule "fonts/powerline-fonts"]
+	path = fonts/powerline-fonts
+	url = git@github.com:Lokaltog/powerline-fonts.git
