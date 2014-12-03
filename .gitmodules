@@ -49,3 +49,6 @@
 [submodule "fonts/powerline-fonts"]
 	path = fonts/powerline-fonts
 	url = git@github.com:Lokaltog/powerline-fonts.git
+[submodule "vim/bundle/vim-javascript-syntax"]
+	path = vim/bundle/vim-javascript-syntax
+	url = git@github.com:jelera/vim-javascript-syntax.git
