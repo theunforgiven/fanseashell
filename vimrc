@@ -25,6 +25,9 @@ set spell spelllang=en_us
 
 set smartcase
 
+"enable scrolling in iterm2
+set mouse=a
+
 "always show status line
 set laststatus=2
 
