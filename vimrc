@@ -27,6 +27,7 @@ set smartcase
 
 "enable scrolling in iterm2
 set mouse=a
+set clipboard=unnamed
 
 "always show status line
 set laststatus=2
