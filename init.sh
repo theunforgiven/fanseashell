@@ -17,6 +17,4 @@ if [ ! \( -e "${HOME}/.vim" \) ]; then
 	ln -s -T ~/.fanseashell/vim ~/.vim
 fi
 
-vim +PluginInstall +qall
-cd ~/.fanseashell/vim/bundle/vimproc.vim
-make
+~/.vim/bundle/neobundle.vim/bin/neoinstall

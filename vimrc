@@ -14,9 +14,9 @@ execute pathogen#infect()
 runtime! bundle/vim-force.com/ftdetect/vim-force.com.vim
 "settings for force.com plugin
 "paths must be absolute for plugin to work properly
-let g:apex_backup_folder="/Users/nick/dev/apex/backup"		
-let g:apex_temp_folder="/Users/nick/dev/apex/temp"		
-let g:apex_properties_folder="/Users/nick/dev/apex/properties"		
+let g:apex_backup_folder="/Users/nick/dev/apex/backup"
+let g:apex_temp_folder="/Users/nick/dev/apex/temp"
+let g:apex_properties_folder="/Users/nick/dev/apex/properties"
 let g:apex_tooling_force_dot_com_path="/Users/nick/dev/apex/tooling-jar/tooling-force.com-0.3.1.3.jar"
 let g:apex_workspace_path="/Users/nick/dev"
 
@@ -66,7 +66,7 @@ colorscheme jellybeans
 
 "This will cause tmux and prompt theme files to be generated
 "i perfer the current blend of themes so these are commented out
-let g:airline#extensions#tmuxline#enabled = 0 
+let g:airline#extensions#tmuxline#enabled = 0
 "let airline#extensions#tmuxline#snapshot_file = "~/.fanseashell/fancy/tmuxline.tmux.conf"
 "let airline#extensions#promptline#snapshot_file = "~/.fanseashell/fancy/promptline.sh"
 
