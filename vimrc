@@ -1,14 +1,48 @@
-"force 256 color mode to prevent terminal detection failure from breaking 256
-"color support
+" Note: Skip initialization for vim-tiny or vim-small.
+if !1 | finish | endif
+
+if has('vim_starting')
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
+
+  " Required:
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'Shougo/vimproc.vim.git', { 'build' : { 'linux' : 'make', 'mac' : 'make' } }
+NeoBundle 'majutsushi/tagbar.git'
+NeoBundle 'airblade/vim-gitgutter.git'
+NeoBundle 'tpope/vim-fugitive.git'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'Shougo/unite.vim.git'
+NeoBundle 'edkolev/tmuxline.vim.git'
+NeoBundle 'edkolev/promptline.vim.git'
+NeoBundle 'scrooloose/nerdtree.git'
+NeoBundle 'nanotech/jellybeans.vim.git'
+NeoBundle 'Lokaltog/vim-easymotion.git'
+NeoBundle 'tpope/vim-repeat.git'
+NeoBundle 'mileszs/ack.vim.git'
+NeoBundle 'plasticboy/vim-markdown.git'
+NeoBundle 'neowit/vim-force.com.git'
+NeoBundle 'Lokaltog/powerline-fonts.git'
+NeoBundle 'jelera/vim-javascript-syntax.git'
+NeoBundle 'elzr/vim-json.git'
+
+call neobundle#end()
+filetype plugin indent on
+" end neovundle
+
 set t_Co=256
 set encoding=utf-8
 set nocompatible
 syntax on
 filetype plugin on
-filetype plugin indent on
-
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
 
 "make sure vim loads apexcode filetype detection
 runtime! bundle/vim-force.com/ftdetect/vim-force.com.vim
@@ -95,23 +129,8 @@ nnoremap <Leader><Leader> <C-^>
 "reformat entire file
 map <Leader>rf mzgg=G`z<CR>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MULTIPURPOSE TAB KEY
-" Indent if we're at the beginning of a line. Else, do completion.
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\K'
-        return "\<TAB>"
-    else
-        return "\<C-P>"
-    endif
-endfunction
-inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
-inoremap <S-TAB> <C-N>
-
 "Automatically enter paste mode when pasting into VI in insert mode and exit
-"paste mode after paste is fiished
+"paste mode after paste is finished
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
 
