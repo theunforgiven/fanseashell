@@ -3,3 +3,8 @@ vim/bundle
 
 !tmux/plugins/tpm
 tmux/plugins
+
+zsh/.zcompdump.zwc
+zsh/.zcompdump
+zsh/.zhistory
+

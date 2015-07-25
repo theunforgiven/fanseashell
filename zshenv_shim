@@ -1,0 +1,9 @@
+#
+# This is just a wrapper to allow for keeping all
+# other zsh files in ~/.zsh/ by setting ZDOTDIR
+# and than calling prezto's original zshenv script
+#
+
+export ZDOTDIR="`dirname $:A`/.zsh"
+
+source "${ZDOTDIR}/.zshenv"

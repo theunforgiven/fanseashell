@@ -30,4 +30,14 @@ if [ ! \( -e "${HOME}/.bash_custom" \) ]; then
 	ln -s ~/.fanseashell/bash_custom ~/.bash_custom
 fi
 
+if [ ! \( -e "${HOME}/.zsh" \) ]; then
+	echo 'linking ~/.fanseashell/zsh ~/.zsh'
+	ln -s ~/.fanseashell/zsh ~/.zsh
+fi
+
+if [ ! \( -e "${HOME}/.zshenv" \) ]; then
+	echo 'linking ~/.fanseashell/zshenv_shim ~/.zshenv'
+	ln -s ~/.fanseashell/zshenv_shim ~/.zshenv
+fi
+
 ~/.vim/bundle/neobundle.vim/bin/neoinstall
