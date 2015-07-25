@@ -13,3 +13,6 @@
 	co = checkout
 	df = diff
 	lg = log -p
+	dc = diff --cached
+[core]
+	autocrlf = input

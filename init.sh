@@ -14,7 +14,11 @@ fi
 
 if [ ! \( -e "${HOME}/.vim" \) ]; then
 	echo 'linking ~/.fanseashell/vim ~/.vim'
-	ln -s -T ~/.fanseashell/vim ~/.vim
+	ln -s ~/.fanseashell/vim ~/.vim
 fi
 
+if [ ! \( -e "${HOME}/.bash_custom" \) ]; then
+	echo 'linking ~/.fanseashell/bash_custom ~/.bash_custom'
+	ln -s ~/.fanseashell/bash_custom ~/.bash_custom
+fi
 ~/.vim/bundle/neobundle.vim/bin/neoinstall
