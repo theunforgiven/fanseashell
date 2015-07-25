@@ -33,14 +33,16 @@ NeoBundle 'scrooloose/nerdtree.git', { 'augroup' : 'NERDTreeHijackNetrw'}
 NeoBundle 'tmux-plugins/vim-tmux'
 NeoBundle 'tpope/vim-fugitive.git', { 'augroup' : 'fugitive'}
 NeoBundle 'tpope/vim-repeat.git'
+NeoBundle 'tpope/vim-sensible.git'
 
 call neobundle#end()
 filetype plugin indent on
+NeoBundleCheck
 
 set t_Co=256
 set encoding=utf-8
 set nocompatible
-syntax on
+syntax enable
 filetype plugin on
 
 "enable spellcheck
@@ -148,9 +150,8 @@ vnoremap . :normal .<CR>
 
 map s <Plug>(easymotion-s2)
 
-set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<
 "toggle showing whitespace
-map <F11> :set list!<CR>
+map <F12> :set list!<CR>
 
 " Unbind the cursor keys in insert, normal and visual modes.
 for prefix in ['i', 'n', 'v']
