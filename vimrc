@@ -34,7 +34,7 @@ NeoBundle 'tmux-plugins/vim-tmux'
 NeoBundle 'tpope/vim-fugitive.git', { 'augroup' : 'fugitive'}
 NeoBundle 'tpope/vim-repeat.git'
 NeoBundle 'tpope/vim-sensible.git'
-NeoBundle 'vim-scripts/xoria256.vim.git'
+NeoBundle 'chriskempson/base16-vim.git'
 
 call neobundle#end()
 filetype plugin indent on
@@ -85,13 +85,18 @@ let g:airline#extensions#tabline#enabled = 1
 "when showing buffers in table line add buffer number to them
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
-let g:airline_theme = 'jellybeans'
-let g:tmuxline_theme = 'vim_statusline_2'
-let g:promptline_theme = 'airline'
-let g:promptline_powerline_symbols = 1
-colorscheme xoria256
+set background=dark
+colorscheme base16-chalk
 
-let g:airline#extensions#tmuxline#enabled = 1 
+let g:airline#extensions#tmuxline#enabled = 0 
+
+let g:airline_theme = 'base16'
+let g:tmuxline_theme = 'airline'
+let g:promptline_theme = 'airline'
+
+let g:promptline_powerline_symbols = 1
+let g:tmuxline_powerline_separators = 1
+
 let airline#extensions#tmuxline#snapshot_file = "~/.fanseashell/fancy/tmuxline.tmux.conf"
 let airline#extensions#promptline#snapshot_file = "~/.fanseashell/fancy/promptline.sh"
 
