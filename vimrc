@@ -78,6 +78,9 @@ set noshowmode
 "highlight current line
 set cursorline
 
+" enable airline for fugitive
+let g:airline#extensions#branch#enabled = 1
+
 "Display buffer names for current tab at in the tab line of the screen when there is a
 "single tab
 let g:airline#extensions#tabline#enabled = 1
@@ -88,12 +91,14 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 set background=dark
 colorscheme base16-chalk
 
-let g:airline#extensions#tmuxline#enabled = 0 
+let g:airline#extensions#tmuxline#enabled = 0
+let g:airline#extensions#promptline#enabled = 0
 
 let g:airline_theme = 'base16'
-let g:tmuxline_theme = 'airline'
 let g:promptline_theme = 'airline'
+let g:tmuxline_theme = 'airline'
 
+let g:airline_powerline_fonts=1
 let g:promptline_powerline_symbols = 1
 let g:tmuxline_powerline_separators = 1
 

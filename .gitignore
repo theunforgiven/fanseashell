@@ -4,6 +4,7 @@ vim/bundle
 !tmux/plugins/tpm
 tmux/plugins
 
+zsh/.zcompcache
 zsh/.zcompdump.zwc
 zsh/.zcompdump
 zsh/.zhistory
