@@ -34,6 +34,7 @@ NeoBundle 'tmux-plugins/vim-tmux'
 NeoBundle 'tpope/vim-fugitive.git', { 'augroup' : 'fugitive'}
 NeoBundle 'tpope/vim-repeat.git'
 NeoBundle 'tpope/vim-sensible.git'
+NeoBundle 'vim-scripts/xoria256.vim.git'
 
 call neobundle#end()
 filetype plugin indent on
@@ -84,16 +85,15 @@ let g:airline#extensions#tabline#enabled = 1
 "when showing buffers in table line add buffer number to them
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
-let g:tmuxline_theme = 'jellybeans'
-let g:promptline_theme = 'jelly'
+let g:airline_theme = 'jellybeans'
+let g:tmuxline_theme = 'vim_statusline_2'
+let g:promptline_theme = 'airline'
 let g:promptline_powerline_symbols = 1
-colorscheme jellybeans
+colorscheme xoria256
 
-"This will cause tmux and prompt theme files to be generated
-"i perfer the current blend of themes so these are commented out
-let g:airline#extensions#tmuxline#enabled = 0
-"let airline#extensions#tmuxline#snapshot_file = "~/.fanseashell/fancy/tmuxline.tmux.conf"
-"let airline#extensions#promptline#snapshot_file = "~/.fanseashell/fancy/promptline.sh"
+let g:airline#extensions#tmuxline#enabled = 1 
+let airline#extensions#tmuxline#snapshot_file = "~/.fanseashell/fancy/tmuxline.tmux.conf"
+let airline#extensions#promptline#snapshot_file = "~/.fanseashell/fancy/promptline.sh"
 
 "disable markdown plugin auto folding
 let g:vim_markdown_folding_disabled=1
