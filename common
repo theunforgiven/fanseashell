@@ -1,0 +1,6 @@
+alias gs='git status'
+alias vv='vi ~/.vimrc'
+
+if [[ -s "${HOME}/.local_profile" ]]; then
+  source "${HOME}/.local_profile"
+fi

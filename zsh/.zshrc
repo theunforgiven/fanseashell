@@ -16,3 +16,5 @@ if { [ "$TERM" = "screen-256color" ] && [ -n "$TMUX" ]; } then
 	#if in tmux load up fancy promptline
 	source ~/.fanseashell/fancy/promptline.sh
 fi
+
+source ~/.fanseashell/common

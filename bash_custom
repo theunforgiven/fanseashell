@@ -24,8 +24,8 @@ fi
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias gs='git status'
 alias vbc='vi ~/.bash_custom && source ~/.bash_custom'
 alias vbp="vi ~/.bash_profile && source ~/.bash_profile"
-alias vv='vi ~/.vimrc'
 alias ..='cd ..'
+
+source ~/.fanseashell/common
