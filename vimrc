@@ -15,24 +15,24 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'Shougo/vimproc.vim.git', { 'build' : { 'linux' : 'make', 'mac' : 'make' } }
-NeoBundle 'majutsushi/tagbar.git'
-NeoBundle 'airblade/vim-gitgutter.git'
-NeoBundle 'tpope/vim-fugitive.git', { 'augroup' : 'fugitive'}
-NeoBundle 'bling/vim-airline'
-NeoBundle 'Shougo/unite.vim.git'
-NeoBundle 'edkolev/tmuxline.vim.git'
-NeoBundle 'edkolev/promptline.vim.git'
-NeoBundle 'scrooloose/nerdtree.git', { 'augroup' : 'NERDTreeHijackNetrw'}
-NeoBundle 'nanotech/jellybeans.vim.git'
-NeoBundle 'Lokaltog/vim-easymotion.git'
-NeoBundle 'tpope/vim-repeat.git'
-NeoBundle 'mileszs/ack.vim.git'
-NeoBundle 'plasticboy/vim-markdown.git'
 NeoBundle 'Lokaltog/powerline-fonts.git'
-NeoBundle 'jelera/vim-javascript-syntax.git'
+NeoBundle 'Lokaltog/vim-easymotion.git'
+NeoBundle 'Shougo/unite.vim.git'
+NeoBundle 'Shougo/vimproc.vim.git', { 'build' : { 'linux' : 'make', 'mac' : 'make' } }
+NeoBundle 'airblade/vim-gitgutter.git'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'edkolev/promptline.vim.git'
+NeoBundle 'edkolev/tmuxline.vim.git'
 NeoBundle 'elzr/vim-json.git'
+NeoBundle 'jelera/vim-javascript-syntax.git'
+NeoBundle 'majutsushi/tagbar.git'
+NeoBundle 'mileszs/ack.vim.git'
+NeoBundle 'nanotech/jellybeans.vim.git'
+NeoBundle 'plasticboy/vim-markdown.git'
+NeoBundle 'scrooloose/nerdtree.git', { 'augroup' : 'NERDTreeHijackNetrw'}
 NeoBundle 'tmux-plugins/vim-tmux'
+NeoBundle 'tpope/vim-fugitive.git', { 'augroup' : 'fugitive'}
+NeoBundle 'tpope/vim-repeat.git'
 
 call neobundle#end()
 filetype plugin indent on
