@@ -32,6 +32,7 @@ NeoBundle 'plasticboy/vim-markdown.git'
 NeoBundle 'Lokaltog/powerline-fonts.git'
 NeoBundle 'jelera/vim-javascript-syntax.git'
 NeoBundle 'elzr/vim-json.git'
+NeoBundle 'tmux-plugins/vim-tmux'
 
 call neobundle#end()
 filetype plugin indent on

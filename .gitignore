@@ -1,2 +1,5 @@
 !vim/bundle/neobundle.vim
 vim/bundle
+
+!tmux/plugins/tpm
+tmux/plugins
