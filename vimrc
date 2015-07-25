@@ -18,41 +18,29 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc.vim.git', { 'build' : { 'linux' : 'make', 'mac' : 'make' } }
 NeoBundle 'majutsushi/tagbar.git'
 NeoBundle 'airblade/vim-gitgutter.git'
-NeoBundle 'tpope/vim-fugitive.git'
+NeoBundle 'tpope/vim-fugitive.git', { 'augroup' : 'fugitive'}
 NeoBundle 'bling/vim-airline'
 NeoBundle 'Shougo/unite.vim.git'
 NeoBundle 'edkolev/tmuxline.vim.git'
 NeoBundle 'edkolev/promptline.vim.git'
-NeoBundle 'scrooloose/nerdtree.git'
+NeoBundle 'scrooloose/nerdtree.git', { 'augroup' : 'NERDTreeHijackNetrw'}
 NeoBundle 'nanotech/jellybeans.vim.git'
 NeoBundle 'Lokaltog/vim-easymotion.git'
 NeoBundle 'tpope/vim-repeat.git'
 NeoBundle 'mileszs/ack.vim.git'
 NeoBundle 'plasticboy/vim-markdown.git'
-NeoBundle 'neowit/vim-force.com.git'
 NeoBundle 'Lokaltog/powerline-fonts.git'
 NeoBundle 'jelera/vim-javascript-syntax.git'
 NeoBundle 'elzr/vim-json.git'
 
 call neobundle#end()
 filetype plugin indent on
-" end neovundle
 
 set t_Co=256
 set encoding=utf-8
 set nocompatible
 syntax on
 filetype plugin on
-
-"make sure vim loads apexcode filetype detection
-runtime! bundle/vim-force.com/ftdetect/vim-force.com.vim
-"settings for force.com plugin
-"paths must be absolute for plugin to work properly
-let g:apex_backup_folder="/Users/nick/dev/apex/backup"
-let g:apex_temp_folder="/Users/nick/dev/apex/temp"
-let g:apex_properties_folder="/Users/nick/dev/apex/properties"
-let g:apex_tooling_force_dot_com_path="/Users/nick/dev/apex/tooling-jar/tooling-force.com-0.3.1.3.jar"
-let g:apex_workspace_path="/Users/nick/dev"
 
 "enable spellcheck
 set spell spelllang=en_us
