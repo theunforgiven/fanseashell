@@ -3,7 +3,6 @@
 # other zsh files in ~/.zsh/ by setting ZDOTDIR
 # and than calling prezto's original zshenv script
 #
-
-export ZDOTDIR="`dirname $:A`/.zsh"
+export ZDOTDIR=${HOME}/.zsh
 
 source "${ZDOTDIR}/.zshenv"
