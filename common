@@ -1,4 +1,5 @@
 alias gs='git status'
+alias shove='git push && git push --tags && gcd && git push'
 alias vv='vi ~/.vimrc'
 
 if [[ -s "${HOME}/.local_profile" ]]; then
