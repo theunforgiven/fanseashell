@@ -16,3 +16,5 @@
 	dc = diff --cached
 [core]
 	autocrlf = input
+[pull]
+	rebase = true
